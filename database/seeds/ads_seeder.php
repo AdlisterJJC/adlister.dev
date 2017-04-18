@@ -4,41 +4,41 @@ require_once __DIR__ . '/../../models/Ads.php';
 
 $ads = new Ads;
 $ads->date_posted = '';
-$ads->name = '';
+$ads->user_id = '';
+$ads->price = '';
 $ads->email = '';
 $ads->item = "";
 $ads->summary = '';
 $ads->description = '';
 
-echo "Inserted name:" .  $dbc->lastInsertId() . PHP_EOL;
 
 $ads = new Ads;
 $ads->date_posted = '';
-$ads->name = '';
+$ads->user_id
+$ads->price = '';
 $ads->email = '';
 $ads->item = "";
 $ads->summary = '';
 $ads->description = '';
 
-echo "Inserted name:" .  $dbc->lastInsertId() . PHP_EOL;
 
 $ads = new Ads;
 $ads->date_posted = '';
-$ads->name = '';
+$ads->user_id
+$ads->price = '';
 $ads->email = '';
 $ads->item = "";
 $ads->summary = '';
 $ads->description = '';
 
-echo "Inserted name:" .  $dbc->lastInsertId() . PHP_EOL;
 
 $ads = new Ads;
 $ads->date_posted = '';
-$ads->name = '';
+$ads->user_id
+$ads->price = '';
 $ads->email = '';
 $ads->item = '';
 $ads->summary = '';
 $ads->description = '';
 
-echo "Inserted name:" .  $dbc->lastInsertId() . PHP_EOL;
 
