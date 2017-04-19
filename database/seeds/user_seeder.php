@@ -1,7 +1,7 @@
 <?php
 
 require_once __DIR__ . '/../../models/User.php';
-
+include '../db_connect.php';
 $user = new User;
 $user->name = 'Finn Mertens';
 $user->email = 'finn@fansofbilly.com';
@@ -29,3 +29,5 @@ $user->email = 'marceline@vampirequeen.com';
 $user->username = "marceline_abadeer";
 $user->password = $_ENV['USER_PASS'];
 $user->save();
+
+// }

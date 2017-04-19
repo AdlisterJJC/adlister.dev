@@ -1,0 +1,169 @@
+body {
+	font-family: 'Alegreya', serif;
+	background-color: #A3A3A8;
+}
+
+.homepageHeader {
+	background-image: url('/img/city_header.jpg');
+	background-size: 100%;
+	background-position: bottom;
+}
+
+.jjcAdlister {
+	color: white;
+	font-size: 11vw;
+	text-shadow: 5px 5px #422724;
+}
+
+.navbar {
+	background-color: #422724;
+	font-size: 1.5vw;
+	border: 0px;
+}
+
+.searchBar {
+	width: 45vw;
+	color: #422724;
+	outline: 2px solid #422724;
+}
+
+.searchSubmit {
+	width: 10vw;
+	color: #422724;
+	background-color: white;
+	border: 1px solid #422724;
+}
+
+.invisibleTwo {
+	font-size: 1vw;
+}
+
+.invisibleThree {
+	font-size: 2vw;
+}
+
+.invisibleFour {
+	font-size: 4vw;
+}
+
+.searchHeader {
+	color: #422724;
+	font-size: 6vw;
+}
+
+.featureListingHeader {
+	color: #422724;
+	font-size: 6vw;
+}
+
+.featureItem {
+	text-align: center;
+	color: white;
+	background-color: #422724;
+	font-size: 2vw;
+}
+
+#bs-example-navbar-collapse-1 > ul.nav.navbar-nav.navbar-left > li:nth-child(3) > a {
+	color: white;
+}
+
+#mainNav > div > div.navbar-header.page-scroll > button {
+	background-color: #422724;
+	color: #A3A3A8;
+}
+
+#bs-example-navbar-collapse-1 > ul.nav.navbar-nav.navbar-left > li:nth-child(2) > a {
+	color: white;
+}
+
+#bs-example-navbar-collapse-1 > ul.nav.navbar-nav.navbar-left > li:nth-child(2) > a:hover {
+	font-size: 110%
+}
+
+#bs-example-navbar-collapse-1 > ul.nav.navbar-nav.navbar-left > li.active > a {
+	background-color: #A3A3A8;
+	color: #422724;
+}
+
+#bs-example-navbar-collapse-1 > ul.nav.navbar-nav.navbar-right > li:nth-child(2) > a {
+	color: white;
+}
+
+#bs-example-navbar-collapse-1 > ul.nav.navbar-nav.navbar-right > li:nth-child(2) > a:hover {
+	font-size: 110%;
+}
+
+#bs-example-navbar-collapse-1 > ul.nav.navbar-nav.navbar-right > li:nth-child(3) > a {
+	color: white;
+}
+
+#bs-example-navbar-collapse-1 > ul.nav.navbar-nav.navbar-right > li:nth-child(3) > a:hover {
+	font-size: 110%;
+}
+
+.searchHeader {
+	color: white;
+	font-size: 2vw;
+}
+
+.loginSignupBox {
+/*	border-top: 2px solid #422724;
+	border-left: 2px solid #422724;
+	border-right: 2px solid #422724;*/
+	border: 2px solid #422724;
+}
+
+hr {
+	border: 1px solid #422724;
+}
+
+.loginSignupHeader {
+	color: #422724;
+	font-size: 5vw;
+	text-align: center;
+}
+
+.loginHeaders {
+	color: #422724;
+	font-size: 2vw;
+}
+
+.loginSignupInput {
+	background-color: #422724;
+	outline: 1px solid #422724;
+	box-shadow: none;
+	color: white;
+	height: 2.5vw;
+	width: 100%;
+}
+
+.loginSignupButton {
+	width: 30%;
+	background-color: white;
+	border: 1px solid #422724;
+	color: #422724;
+	font-size: 1.5vw;
+}
+
+.accountWelcome {
+	font-size: 4vw;
+	color: #422724;
+}
+
+.title {
+	color: #422724;
+	font-size: 3vw;
+	text-align: center;
+}
+
+.summary {
+	color: #422724;
+	font-size: 1.5vw;
+	text-align: center;
+}
+
+
+
+
+
+
