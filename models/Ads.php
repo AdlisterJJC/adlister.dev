@@ -35,7 +35,7 @@ class Ads extends Model {
 		// TODO: use the $connection static property to query the database for all the
 		//       records in the parks table
 
-		$ads = self::$connection->query('SELECT * FROM ' . self::$table);
+		$ads = self::$dbc->query('SELECT * FROM ' . self::$table);
 		// TODO: iterate over the results array and transform each associative
 		//       array into a Park object
 
@@ -43,7 +43,7 @@ class Ads extends Model {
 
 		foreach ($ads as $ad) {
 
-			$singleAd = new Park();
+			$singleAd = new Ads();
 
 			$singleAd->id = $ad['id'];
 			$singleAd->date_posted = $ad['date_posted'];

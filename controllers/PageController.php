@@ -23,6 +23,9 @@ function pageController()
         case '/users/account':
             $mainView = '../views/users/account.php';
             break;
+        case '/results':
+            $mainView = '../views/ads/index.php';
+            break;
         case '/login':
             $mainView = '../views/users/login.php';
             break;
