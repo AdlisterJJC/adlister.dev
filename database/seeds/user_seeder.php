@@ -5,14 +5,14 @@ include '../db_connect.php';
 $user = new User;
 $user->name = 'Finn Mertens';
 $user->email = 'finn@fansofbilly.com';
-$user->username = "finn_the_human";
+$user->username = "finn_human";
 $user->password = $_ENV['USER_PASS'];
 $user->save();
 
 $user = new User;
 $user->name = 'Jake';
 $user->email = 'jake@fansofbilly.com';
-$user->username = "jake_the_dog";
+$user->username = "jake_dog";
 $user->password = $_ENV['USER_PASS'];
 $user->save();
 
@@ -26,7 +26,7 @@ $user->save();
 $user = new User;
 $user->name = 'Marceline Abadeer';
 $user->email = 'marceline@vampirequeen.com';
-$user->username = "marceline_abadeer";
+$user->username = "marceline";
 $user->password = $_ENV['USER_PASS'];
 $user->save();
 

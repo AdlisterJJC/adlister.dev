@@ -16,7 +16,7 @@ $ads = 'CREATE TABLE IF NOT EXISTS ads (
     categories VARCHAR(200) NOT NULL,
     price DOUBLE(24,2) NOT NULL, 
     email VARCHAR(240) NOT NULL,
-    item VARCHAR (30) NOT NULL,
+    item VARCHAR (70) NOT NULL,
     summary VARCHAR(100) NOT NULL,
     description VARCHAR(500),
     PRIMARY KEY(id),
