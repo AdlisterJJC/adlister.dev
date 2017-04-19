@@ -153,7 +153,7 @@ hr {
 
 .title {
 	color: #422724;
-	font-size: 3vw;
+	font-size: 2.5vw;
 	text-align: center;
 }
 
@@ -162,6 +162,17 @@ hr {
 	font-size: 1.5vw;
 	text-align: center;
 }
+
+.createTitle {
+	color: #422724;
+	font-size: 4.5vw;
+	text-align: center;
+}
+
+.createBody {
+	border: 2px solid #422724;
+}
+
 
 body > div:nth-child(5) > a {
 	color: #422724;
@@ -213,6 +224,30 @@ body > div:nth-child(7) > a:hover {
 	background-color: #422724;
 	color: white;
 	text-align: center;
+}
+
+.createHeaders {
+	color: #422724;
+	font-size: 2vw;
+}
+
+input {
+	font-size: 2vw;
+	border: 1px solid #422724;
+}
+
+textarea {
+	font-size: 2vw;
+	border: 1px solid #422724;
+}
+
+.createDescription {
+	background-color: #422724;
+	outline: 1px solid #422724;
+	box-shadow: none;
+	color: white;
+	height: 20vw;
+	width: 100%;
 }
 
 
