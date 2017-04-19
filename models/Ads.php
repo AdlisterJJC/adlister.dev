@@ -27,5 +27,26 @@ class Ads extends Model {
 
 	}
 
+	public static function findAdsbyCategory($category) {
+
+		self::dbConnect();
+
+		$query = 'SELECT * FROM' . self::$table . ' WHERE category = :category';
+
+		$stmt = self::$dbc->prepare($query);
+		$stmt->bindValue(':category', $category, PDO::PARAM_STR);
+		$stmt->execute();
+
+		$results = $stmt->fetch(PDO::FETCH_ASSOC);
+
+		$instance = null;
+		if($results) {
+			$instance = new static;
+			$instance->attributes = $results;
+		}
+
+		return $instance;
+	}
+
 }
 ?>
