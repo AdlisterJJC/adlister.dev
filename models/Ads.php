@@ -81,8 +81,28 @@ class Ads extends Model {
 			$instance = new static;
 			$instance->attributes = $results;
 		}
-
+:
 		return $instance;
+	}
+
+	public static function insertAd() {
+
+		self::dbConnect();
+
+		$statement = self:$dbc->prepare('INSERT INTO users (date_posted, user_id, categories, price, email, item, summary, description) VALUES (:date_posted, :user_id, :categories, :price, :email, :item, :summary, :description)');
+
+		$statement->bindValue(':date_posted', $this->date_posted, PDO::PARAM_STR);
+		$statement->bindValue(':user_id', $this->user_id, PDO::PARAM_STR);		
+		$statement->bindValue(':categories', $this->categories, PDO::PARAM_STR);
+		$statement->bindValue(':price', $this->price, PDO::PARAM_INT);
+		$statement->bindValue(':email', $this->email, PDO::PARAM_STR);
+		$statement->bindValue(':item', $this->item, PDO::PARAM_STR);
+		$statement->bindValue(':summary', $this->summary, PDO::PARAM_STR);
+		$statement->bindValue(':categories', $this->categories, PDO::PARAM_STR);	
+
+		$statement->execute();
+
+		$this->id = self::$dbc->lastInsertId();	
 	}
 
 }
