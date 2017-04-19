@@ -146,9 +146,10 @@ hr {
 }
 
 .accountWelcome {
-	font-size: 4vw;
+	font-size: 3.5vw;
 	color: #422724;
 }
+
 
 .title {
 	color: #422724;
@@ -161,6 +162,60 @@ hr {
 	font-size: 1.5vw;
 	text-align: center;
 }
+
+body > div:nth-child(5) > a {
+	color: #422724;
+	font-size: 2vw;
+	font-style: italic;
+}
+
+body > div:nth-child(5) > a:hover {
+	color: #422724;
+	font-size: 2.5vw;
+	text-decoration: none;
+}
+
+body > div:nth-child(6) > a {
+	color: #422724;
+	font-size: 2vw;
+	font-style: italic;
+}
+
+body > div:nth-child(6) > a:hover {
+	color: #422724;
+	font-size: 2.5vw;
+	text-decoration: none;
+}
+
+body > div:nth-child(7) > a {
+	color: #422724;
+	font-size: 2vw;
+	font-style: italic;
+}
+
+body > div:nth-child(7) > a:hover {
+	color: #422724;
+	font-size: 2.5vw;
+	text-decoration: none;
+}
+
+.accountOptions {
+	text-align: center;
+}
+
+.accountListings {
+	border: 1px solid #422724;
+	padding: 10px;
+}
+
+.personalItem {
+	font-size: 2vw;
+	background-color: #422724;
+	color: white;
+	text-align: center;
+}
+
+
 
 
 
