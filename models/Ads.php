@@ -91,7 +91,7 @@ class Ads extends Model {
 
 		$statement = self:$dbc->prepare('INSERT INTO users (date_posted, user_id, categories, price, email, item, summary, description) VALUES (:date_posted, :user_id, :categories, :price, :email, :item, :summary, :description)');
 
-		$statement->bindValue(':date_posted', $this->date_posted, PDO::PARAM_STR);
+		$statement->bindValue(':date_posted', date();, PDO::PARAM_STR);
 		$statement->bindValue(':user_id', $this->user_id, PDO::PARAM_STR);		
 		$statement->bindValue(':categories', $this->categories, PDO::PARAM_STR);
 		$statement->bindValue(':price', $this->price, PDO::PARAM_INT);
