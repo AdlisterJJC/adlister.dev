@@ -3,13 +3,14 @@
 require_once __DIR__ . '/Model.php';
 
 class Ads extends Model {
+
 	protected static $table = 'ads';
 
 	public static function findAdByKeyword($keyword){
 		// connect to database;
 		self::dbConnect();
 
-		$query = 'SELECT * FROM' . self::$table . ' WHERE item LIKE %:item%';
+		$query = 'SELECT * FROM ' . self::$table . ' WHERE item LIKE %:item%';
 
 		$stmt = self::$dbc->prepare($query);
 		$stmt->bindValue(':item', $keyword, PDO::PARAM_STR);
@@ -27,11 +28,47 @@ class Ads extends Model {
 
 	}
 
+	public static function all() {
+		// TODO: call dbConnect to ensure we have a database connection
+
+		self::dbConnect();
+		// TODO: use the $connection static property to query the database for all the
+		//       records in the parks table
+
+		$ads = self::$connection->query('SELECT * FROM ' . self::$table);
+		// TODO: iterate over the results array and transform each associative
+		//       array into a Park object
+
+		$adsArray = [];
+
+		foreach ($ads as $ad) {
+
+			$singleAd = new Park();
+
+			$singleAd->id = $ad['id'];
+			$singleAd->date_posted = $ad['date_posted'];
+			$singleAd->user_id = $ad['user_id'];
+			$singleAd->categories = $ad['categories'];
+			$singleAd->price = $ad['price'];
+			$singleAd->email = $ad['email'];
+			$singleAd->item = $ad['item'];
+			$singleAd->summary = $ad['summary'];
+			$singleAd->description = $ad['description'];
+
+			array_push($adsArray, $singleAd);
+			
+		}
+
+		// TODO: return an array of Park objects
+		return $adsArray;
+	   
+	}
+
 	public static function findAdsbyCategory($category) {
 
 		self::dbConnect();
 
-		$query = 'SELECT * FROM' . self::$table . ' WHERE category = :category';
+		$query = 'SELECT * FROM' . self::$table . ' WHERE category LIKE %:category%';
 
 		$stmt = self::$dbc->prepare($query);
 		$stmt->bindValue(':category', $category, PDO::PARAM_STR);
