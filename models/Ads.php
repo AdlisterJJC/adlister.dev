@@ -43,7 +43,7 @@ class Ads extends Model {
 
 		foreach ($ads as $ad) {
 
-			$singleAd = new Park();
+			$singleAd = new Ads();
 
 			$singleAd->id = $ad['id'];
 			$singleAd->date_posted = $ad['date_posted'];
