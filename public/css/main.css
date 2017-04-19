@@ -148,7 +148,18 @@ hr {
 .accountWelcome {
 	font-size: 4vw;
 	color: #422724;
+}
 
+.title {
+	color: #422724;
+	font-size: 3vw;
+	text-align: center;
+}
+
+.summary {
+	color: #422724;
+	font-size: 1.5vw;
+	text-align: center;
 }
 
 
