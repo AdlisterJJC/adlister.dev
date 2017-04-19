@@ -42,6 +42,10 @@ body {
 	font-size: 2vw;
 }
 
+.invisibleFour {
+	font-size: 4vw;
+}
+
 .searchHeader {
 	color: #422724;
 	font-size: 6vw;
@@ -102,7 +106,44 @@ body {
 	font-size: 2vw;
 }
 
+.loginSignupBox {
+/*	border-top: 2px solid #422724;
+	border-left: 2px solid #422724;
+	border-right: 2px solid #422724;*/
+	border: 2px solid #422724;
+}
 
+hr {
+	border: 1px solid #422724;
+}
+
+.loginSignupHeader {
+	color: #422724;
+	font-size: 5vw;
+	text-align: center;
+}
+
+.loginHeaders {
+	color: #422724;
+	font-size: 2vw;
+}
+
+.loginSignupInput {
+	background-color: #422724;
+	outline: 1px solid #422724;
+	box-shadow: none;
+	color: white;
+	height: 2.5vw;
+	width: 100%;
+}
+
+.loginSignupButton {
+	width: 30%;
+	background-color: white;
+	border: 1px solid #422724;
+	color: #422724;
+	font-size: 1.5vw;
+}
 
 
 
