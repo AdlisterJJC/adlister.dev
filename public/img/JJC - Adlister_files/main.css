@@ -22,24 +22,14 @@ body {
 }
 
 .searchBar {
-	width: 45vw;
+	width: 50vw;
 	color: #422724;
 	outline: 2px solid #422724;
-}
 
-.searchSubmit {
-	width: 10vw;
-	color: #422724;
-	background-color: white;
-	border: 1px solid #422724;
 }
 
 .invisibleTwo {
 	font-size: 1vw;
-}
-
-.invisibleThree {
-	font-size: 2vw;
 }
 
 .searchHeader {
