@@ -43,7 +43,7 @@ class User extends Model {
         return $instance;
     }
 
-        public function insertUser() {
+        public static function insertUser() {
         // TODO: call dbConnect to ensure we have a database connection
         self::dbConnect();
 
@@ -52,22 +52,22 @@ class User extends Model {
             // TODO: use the $this keyword to bind the values from this object to
         //       the prepared statement
 
-        $statement = self::$dbc->prepare('INSERT INTO users (name, email, username, password) VALUES (:name, :email, :username, :password)');
+        $statement = self::$dbc->prepare('INSERT INTO users (name, email, username, password) VALUES (:signupName, :signupEmail, :signupUsername, :signupPassword)');
 
-        $statement->bindValue(':name', $this->name, PDO::PARAM_STR);
+        $statement->bindValue(':signupName', $_POST['signupName'], PDO::PARAM_STR);
 
-        $statement->bindValue(':email', $this->email, PDO::PARAM_STR);
+        $statement->bindValue(':signupEmail', $_POST['signupEmail'], PDO::PARAM_STR);
 
-        $statement->bindValue(':username', $this->username, PDO::PARAM_STR);
+        $statement->bindValue(':signupUsername', $_POST['signupUsername'], PDO::PARAM_STR);
 
-        $statement->bindValue(':password', $this->password, PDO::PARAM_STR);
+        $statement->bindValue(':signupPassword', $_POST['signupPassword'], PDO::PARAM_STR);
 
         $statement->execute();
         
         // TODO: execute the statement and set the $id property of this object to
         //       the newly created id
 
-        $this->id = self::$dbc->lastInsertId();
+        // $this->id = self::$dbc->lastInsertId();
         
     }
 }
