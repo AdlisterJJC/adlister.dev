@@ -38,12 +38,18 @@
                 <li class="hidden">
                     <a href="#page-top"></a>
                 </li>
-                <li>
-                    <a href="/login">Login/Signup</a>
-                </li>
+
                 <li>
                     <a href="/users/account">Account</a>
                 </li>
+                <?php if (!isset($_SESSION)) { ?>
+                <?= '<li>
+                        <a href="/login">Login/Signup</a>
+                    </li>'; ?> 
+                <?php } else if (isset($_SESSION)) { ?>
+                <?= '<li>
+                        <a href="/logout">Logout</a>
+                    </li>'; }?>
             </ul>
         </div>
     </div>
