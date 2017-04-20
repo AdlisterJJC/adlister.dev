@@ -38,16 +38,15 @@
                 <li class="hidden">
                     <a href="#page-top"></a>
                 </li>
-
-                <li>
-                    <a href="/users/account">Account</a>
-                </li>
-                <?php if (!isset($_SESSION['username'])) { ?>
+                <?php if (!isset($_SESSION['IS_LOGGED_IN'])) { ?>
                 <?= '<li>
                         <a href="/login">Login/Signup</a>
                     </li>'; ?> 
-                <?php } else if (isset($_SESSION['username'])) { ?>
+                <?php } else if (isset($_SESSION['IS_LOGGED_IN'])) { ?>
                 <?= '<li>
+                        <a href="/users/account">Account</a>
+                    </li>
+                    <li>
                         <a href="/logout">Logout</a>
                     </li>'; }?>
             </ul>
