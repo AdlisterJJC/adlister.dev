@@ -7,23 +7,6 @@ require_once __DIR__ . '/../utils/helper_functions.php';
 
 function pageController()
 {
-
-	function loginCheck() {
-
-		if(!empty($_POST)) {
-			$usernameOrEmail = Input::get('loginUsername');
-			$password = Input::get('password');
-			Auth::attempt($usernameOrEmail, $password);
-			if (Auth::check()) {
-				header("Location: http://adlister.dev/account.php");
-				exit;
-			} else {
-				$message = "Please retry username/email or password.";
-			}
-	}
-		
-	}
-
 	// defines array to be returned and extracted for view
 	$data = [];
 
