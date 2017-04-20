@@ -39,7 +39,7 @@ function pageController()
 				if(Auth::check()){
 					header("Location: /users/account");
 				} else {
-					$data['message'] = "Please enter username or password.";
+					return $data['message'] = "Please enter username or password.";
 				}
 			}
 			break;
