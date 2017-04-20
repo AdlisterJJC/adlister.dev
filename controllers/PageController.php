@@ -30,7 +30,7 @@ function pageController()
 			$data['message'] = '';
 
 			if(Auth::check()){
-				header("Location: http://adlister.dev/account.php");
+				header("Location: /users/account");
 			}
 			if(!empty($_POST)) {
 				$usernameOrEmail = Input::get('loginUsername');
