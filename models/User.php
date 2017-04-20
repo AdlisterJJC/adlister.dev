@@ -42,4 +42,32 @@ class User extends Model {
 
         return $instance;
     }
+
+        public function insertUser() {
+        // TODO: call dbConnect to ensure we have a database connection
+        self::dbConnect();
+
+        // TODO: use the $connection static property to create a perpared statement for
+        //       inserting a record into the parks table
+            // TODO: use the $this keyword to bind the values from this object to
+        //       the prepared statement
+
+        $statement = self::$dbc->prepare('INSERT INTO users (name, email, username, password) VALUES (:name, :email, :username, :password)');
+
+        $statement->bindValue(':name', $this->name, PDO::PARAM_STR);
+
+        $statement->bindValue(':email', $this->email, PDO::PARAM_STR);
+
+        $statement->bindValue(':username', $this->username, PDO::PARAM_STR);
+
+        $statement->bindValue(':password', $this->password, PDO::PARAM_STR);
+
+        $statement->execute();
+        
+        // TODO: execute the statement and set the $id property of this object to
+        //       the newly created id
+
+        $this->id = self::$dbc->lastInsertId();
+        
+    }
 }
