@@ -4,7 +4,7 @@
     <div class="col-xs-12 loginSignupQuestion">Already have an account?</div>
     <div class="col-xs-12 loginSignupHeader">Login</div>
     <hr>
-    <form action="" method="POST">
+    <form action="" method="POST" class="loginForm">
         <div class="col-xs-12 loginHeaders">Username/Email</div>
             <div class="col-xs-12">
                 <input type="text" name="loginUsername" id="loginUsername" class="loginSignupInput">
@@ -12,7 +12,7 @@
         <div class="col-xs-12 invisible invisibleTwo">filler text</div>
         <div class="col-xs-12 loginHeaders">Password</div>
             <div class="col-xs-12">
-                <input type="text" name="loginPassword" id="loginPassword" class="loginSignupInput">
+                <input type="password" name="loginPassword" id="loginPassword" class="loginSignupInput">
             </div>
         <div class="col-xs-12 invisible invisibleThree">filler text</div>
         <div class="col-xs-12">
@@ -30,7 +30,7 @@
     <div class="col-xs-12 loginSignupQuestion">Don't have an account yet?</div>
     <div class="col-xs-12 loginSignupHeader">Signup</div>
     <hr>
-    <form action="" method="POST">
+    <form action="" method="POST" class="signupForm">
         <div class="col-xs-12 loginHeaders">Name</div>
             <div class="col-xs-12">
                 <input type="text" name="signupName" id="signupName" class="loginSignupInput">
@@ -48,12 +48,12 @@
         <div class="col-xs-12 invisible invisibleTwo">filler text</div>
         <div class="col-xs-12 loginHeaders">Password</div>
             <div class="col-xs-12">
-                <input type="text" name="signupPassword" id="signupPassword" class="loginSignupInput">
+                <input type="password" name="signupPassword" id="signupPassword" class="loginSignupInput">
             </div>
         <div class="col-xs-12 invisible invisibleTwo">filler text</div>
         <div class="col-xs-12 loginHeaders">Confirm Password</div>
             <div class="col-xs-12">
-                <input type="text" name="confirmPassword" id="confirmPassword" class="loginSignupInput">
+                <input type="password" name="confirmPassword" id="confirmPassword" class="loginSignupInput">
             </div>
         <div class="col-xs-12 invisible invisibleThree">filler text</div>
         <div class="col-xs-12">

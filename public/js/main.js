@@ -25,6 +25,16 @@ $("document").ready(function(){
 
 
 
+	var maxHeight = 0;
+
+	$(".img").each(function () {
+    	if ($(this).height() > maxHeight) {
+        	maxHeight = $(this).height();
+    	}
+	});
+
+	$(".img").height(maxHeight);
+
 
 
 

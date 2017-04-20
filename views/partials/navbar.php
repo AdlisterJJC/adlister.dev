@@ -17,7 +17,7 @@
                     <a href="#page-top"></a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="/">Ad-Up: Home</a>
+                    <a href="/">Home</a>
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-left">

@@ -18,7 +18,7 @@
 </div>
 
 <div class="col-xs-12 featureListingHeader">
-    Featured Listings
+    Recent Listings
 </div>
 
 <div class="col-xs-12">
