@@ -106,4 +106,5 @@ class Ads extends Model {
 	}
 
 }
+
 ?>
