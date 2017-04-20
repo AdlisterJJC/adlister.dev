@@ -32,7 +32,6 @@ function pageController()
 			if(Auth::check()){
 				header("Location: http://adlister.dev/account.php");
 			}
-			var_dump($_POST);
 			if(!empty($_POST)) {
 				$usernameOrEmail = Input::get('loginUsername');
 				$password = Input::get('loginPassword');
