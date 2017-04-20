@@ -42,11 +42,11 @@
                 <li>
                     <a href="/users/account">Account</a>
                 </li>
-                <?php if (!isset($_SESSION)) { ?>
+                <?php if (!isset($_SESSION['username'])) { ?>
                 <?= '<li>
                         <a href="/login">Login/Signup</a>
                     </li>'; ?> 
-                <?php } else if (isset($_SESSION)) { ?>
+                <?php } else if (isset($_SESSION['username'])) { ?>
                 <?= '<li>
                         <a href="/logout">Logout</a>
                     </li>'; }?>
