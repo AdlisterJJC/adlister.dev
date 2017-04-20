@@ -1,7 +1,15 @@
+<?php 
+
+$ads = Ads::all();
+$i = 0;
+
+
+?>
+
 <div class="col-xs-12 homepageHeader">
     <div class="col-xs-12 invisible jjcAdlister">lorem</div>
     <div class="col-xs-12 jjcAdlister">
-        JJC Adlister
+        Ad-Up
     </div>
     <div class="col-xs-12 invisible jjcAdlister">lorem</div>
     <div class="col-xs-12 searchHeader">
@@ -18,16 +26,27 @@
 </div>
 
 <div class="col-xs-12 featureListingHeader">
-    Featured Listings
+    Recent Listings
 </div>
 
-<div class="col-xs-12">
-    <div class="col-xs-4 featureItem">ITEM 1</div>
-    <div class="col-xs-4 featureItem">ITEM 2</div>
-    <div class="col-xs-4 featureItem">ITEM 3</div>
-</div>
+<?php foreach ($ads as $listing): ?>
+    <?php if ($i == 3) { break; } ?>
 
-<div class="col-xs-12 invisible featureListingHeader">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus veniam magnam numquam. Dolorum, esse eligendi facilis, error odit veritatis asperiores natus, quidem expedita quam dolorem reiciendis quos neque delectus quia!</div>
+    <?= '<div class="col-xs-12 col-sm-6 col-md-4 portfolio-item" id="lightbox">
+            <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
+                <div class="portfolio-hover">
+                    <div class="portfolio-hover-content">
+                        <i class="fa fa-plus fa-3x"></i>
+                    </div>
+                </div>
+                <img src="img/book_header.jpg" class="img-responsive img" alt="">
+            </a>
+            <div class="portfolio-caption">
+                <h4>' . $listing->item . '</h4><h4>' . $listing->price . '</h4>
+                <p class="text-muted">' . $listing->summary . '</p>
+            </div>
+        </div></div>' ?>
+<?php $i++; endforeach; ?>
 
 
 
