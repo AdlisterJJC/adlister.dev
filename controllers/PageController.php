@@ -2,8 +2,15 @@
 
 require_once __DIR__ . '/../utils/helper_functions.php';
 
+
+
+
 function pageController()
 {
+
+    function loginCheck() {
+        
+    }
 
     // defines array to be returned and extracted for view
     $data = [];

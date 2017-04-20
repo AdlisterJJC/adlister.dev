@@ -68,5 +68,6 @@ class User extends Model {
         //       the newly created id
 
         $this->id = self::$dbc->lastInsertId();
+        
     }
 }
