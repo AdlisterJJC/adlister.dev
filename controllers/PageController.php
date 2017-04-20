@@ -36,6 +36,7 @@ function pageController()
 				$usernameOrEmail = Input::get('loginUsername');
 				$password = Input::get('loginPassword');
 				Auth::attempt($usernameOrEmail, $password);
+				header("Location: /users/account");
 			} else {
 				$data['message'] = "Please enter username or password.";
 			}
