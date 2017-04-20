@@ -20,7 +20,11 @@ function pageController()
 			$mainView = '../views/users/edit.php';
 			break;
 		case '/users/account':
-			$mainView = '../views/users/account.php';
+			if (isset($_SESSION['IS_LOGGED_IN'])) {
+				$mainView = '../views/users/account.php';
+			} else {
+				$mainView = '../views/home.php';
+			}
 			break;
 		case '/results':
 			$mainView = '../views/ads/index.php';
@@ -28,24 +32,25 @@ function pageController()
 		case '/login':
 			$mainView = '../views/users/login.php';
 			$data['message'] = '';
-
 			if(Auth::check()){
 				header("Location: /users/account");
 			}
-			if(!empty($_POST)) {
+			if(!empty($_POST['loginUsername']) && !empty($_POST['loginPassword']) && empty($_POST['signupUsername']) && empty($_POST['signupName']) && empty($_POST['signupEmail']) && empty($_POST['signupPassword'])) {
 				$usernameOrEmail = Input::get('loginUsername');
 				$password = Input::get('loginPassword');
 				Auth::attempt($usernameOrEmail, $password);
-				if(Auth::check()){
-					header("Location: /users/account");
-				} else {
-					return $data['message'] = "Please enter username or password.";
-				}
-			}
-			break;
-		case '/signup':
-			$mainView = '../views/users/signup.php';
-			break;
+				$_SESSION['IS_LOGGED_IN'] = $usernameOrEmail;
+				header("Location: /users/account");
+			} elseif (!empty($_POST['signupUsername']) && !empty($_POST['signupName']) && !empty($_POST['signupEmail']) && !empty($_POST['signupPassword']) && $_POST['signupPassword'] === $_POST['confirmPassword'] && empty($_POST['loginUsername']) && empty($_POST['loginPassword'])) {
+				// var_dump($_POST);
+				$_SESSION['IS_LOGGED_IN'] = $_POST['signupUsername'];
+				User::insertUser();
+				header("Location: /users/account");
+			} 
+			// } elseif (!Auth::attempt($usernameOrEmail, $password)) {
+			// 	$data['message'] = "Please enter username or password.";
+			// }
+			break;				
 		case '/create':
 			$mainView = '../views/ads/create.php';
 			break;

@@ -22,7 +22,7 @@ $ads = Ads::all();
                 <img src="img/book_header.jpg" class="img-responsive img" alt="">
             </a>
             <div class="portfolio-caption">
-                <h4>' . $listing->item . '</h4><h4>$' . $listing->price . '</h4>
+                <h3>' . $listing->item . '</h3><h4>$' . $listing->price . '</h4>
                 <p class="text-muted">' . $listing->summary . '</p>
             </div>
         </div></div>' ?>
@@ -43,7 +43,7 @@ $ads = Ads::all();
                 <img src="img/sample.png" class="img-responsive img" alt="">
             </a>
             <div class="portfolio-caption">
-                <h4>' . $listing->item . '</h4><h4>$' . $listing->price . '</h4>
+                <h3>' . $listing->item . '</h3><h4>$' . $listing->price . '</h4>
                 <p class="text-muted">' . $listing->summary . '</p>
             </div>
         </div></div>' ?>
@@ -64,7 +64,7 @@ $ads = Ads::all();
                 <img src="img/brick_header.jpg" class="img-responsive img" alt="">
             </a>
             <div class="portfolio-caption">
-                <h4>' . $listing->item . '</h4><h4>$' . $listing->price . '</h4>
+                <h3>' . $listing->item . '</h3><h4>$' . $listing->price . '</h4>
                 <p class="text-muted">' . $listing->summary . '</p>
             </div>
         </div></div>' ?>
@@ -85,7 +85,7 @@ $ads = Ads::all();
                 <img src="img/city_header.jpg" class="img-responsive img" alt="">
             </a>
             <div class="portfolio-caption">
-                <h4>' . $listing->item . '</h4><h4>$' . $listing->price . '</h4>
+                <h3>' . $listing->item . '</h3><h4>$' . $listing->price . '</h4>
                 <p class="text-muted">' . $listing->summary . '</p>
             </div>
         </div></div>' ?>
