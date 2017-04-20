@@ -36,12 +36,12 @@ function pageController()
 				$usernameOrEmail = Input::get('loginUsername');
 				$password = Input::get('loginPassword');
 				Auth::attempt($usernameOrEmail, $password);
-				header("Location: /users/account");
-			} elseif (!empty($_POST['signupUsername']) && !empty($_POST['signupName']) && !empty($_POST['signupEmail']) && !empty($_POST['signupPassword']) && $_POST['signupPassword'] === $_POST['confirmPassword'] && empty($_POST['loginUsername']) && empty($_POST['loginPassword'])) {
-				Users::insertUser(); 
-			} elseif (!Auth::attempt($usernameOrEmail, $password)) {
-				$data['message'] = "Please enter username or password.";
 
+				if(Auth::check()){
+					header("Location: /users/account");
+				} else {
+					$data['message'] = "Invalid username or password.";
+				}
 			}
 			break;				
 
