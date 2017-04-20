@@ -2,9 +2,6 @@
 
 require_once __DIR__ . '/../utils/helper_functions.php';
 
-
-
-
 function pageController()
 {
 	// defines array to be returned and extracted for view
@@ -35,6 +32,7 @@ function pageController()
 			if(Auth::check()){
 				header("Location: http://adlister.dev/account.php");
 			}
+			var_dump($_POST);
 			if(!empty($_POST)) {
 				$usernameOrEmail = Input::get('loginUsername');
 				$password = Input::get('loginPassword');
@@ -51,6 +49,10 @@ function pageController()
 			break;
 		case '/edit':
 			$mainView = '../views/ads/edit.php';
+			break;
+		case '/logout':
+			Auth::logout();
+			$mainView = '../views/home.php';
 			break;
 		default:    // displays 404 if route not specified above
 			$mainView = '../views/404.php';
