@@ -12,7 +12,7 @@ $ads->categories = 'car, expensive, tesla s, vehicle, automobile, electric vehic
 $ads->price = 12929.29;
 $ads->email = 'doingdumbshit@fakeemail.com';
 $ads->item = "Tesla S";
-$ads->summary = 'Fart box';
+$ads->summary = 'Car vroom';
 $ads->description = 'Expensive Economic Environmental Vehicle';
 $ads->save();
 
@@ -33,7 +33,7 @@ $ads->user_id = 3;
 $ads->categories = 'shoes, nike, running, clothes, athletic, clothing';
 $ads->price = 100.00;
 $ads->email = 'doingthings@totallylegitemail.com';
-$ads->item = "Nike Shoes?";	
+$ads->item = 'Nike Shoes?';	
 $ads->summary = 'A pair of artisan running shoes';
 $ads->description = 'The most decent pair of shoes you will wear for a couple of months.';
 $ads->save();
@@ -44,7 +44,7 @@ $ads->user_id = 4;
 $ads->categories = 'glasses, clothes, clothing, reading, vision';
 $ads->price = 20.00;
 $ads->email = 'seethingsbetter@seemail.com';
-$ads->item = "Reading Glasses for any one with a head";
+$ads->item = 'Reading Glasses';
 $ads->summary = 'Glasses for reading in the summer time light';
 $ads->description = 'Authentic pieces of glass attached to a framing apparatus hanging on to the cranium of apes.';
 $ads->save();
