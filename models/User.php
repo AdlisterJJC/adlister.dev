@@ -9,7 +9,7 @@ class User extends Model {
     // given key is not a password, just call the parent method
     public function __set($name, $value)
     {
-        if ($name == 'password') {
+        if ($name == 'signupPassword') {
             $value = password_hash($value, PASSWORD_DEFAULT);
         }
         parent::__set($name, $value);
@@ -60,7 +60,7 @@ class User extends Model {
 
         $statement->bindValue(':signupUsername', $_POST['signupUsername'], PDO::PARAM_STR);
 
-        $statement->bindValue(':signupPassword', $_POST['signupPassword'], PDO::PARAM_STR);
+        $statement->bindValue(':signupPassword', password_hash($_POST['signupPassword'], PASSWORD_DEFAULT), PDO::PARAM_STR);
 
         $statement->execute();
         
