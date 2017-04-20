@@ -1,6 +1,9 @@
 body {
 	font-family: 'Alegreya', serif;
 	background-color: #A3A3A8;
+	background-image: url('/img/grayscale.jpeg');
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 
 .homepageHeader {
@@ -27,11 +30,28 @@ body {
 	outline: 2px solid #422724;
 }
 
+.searchBarNavbar {
+	width: 25vw;
+	color: #422724;
+	outline: 1px solid #422724;
+	height: 2vw;
+	float: left;
+	font-size: 1vw;
+}
+
 .searchSubmit {
 	width: 10vw;
 	color: #422724;
 	background-color: white;
 	border: 1px solid #422724;
+}
+
+.searchSubmitNavbar {
+	width: 5vw;
+	color: #422724;
+	background-color: white;
+	border: 1px solid #422724;
+	height: 2vw;
 }
 
 .invisibleTwo {
@@ -44,11 +64,6 @@ body {
 
 .invisibleFour {
 	font-size: 4vw;
-}
-
-.searchHeader {
-	color: #422724;
-	font-size: 6vw;
 }
 
 .featureListingHeader {
@@ -77,7 +92,7 @@ body {
 }
 
 #bs-example-navbar-collapse-1 > ul.nav.navbar-nav.navbar-left > li:nth-child(2) > a:hover {
-	font-size: 110%
+	font-style: italic;
 }
 
 #bs-example-navbar-collapse-1 > ul.nav.navbar-nav.navbar-left > li.active > a {
@@ -90,7 +105,7 @@ body {
 }
 
 #bs-example-navbar-collapse-1 > ul.nav.navbar-nav.navbar-right > li:nth-child(2) > a:hover {
-	font-size: 110%;
+	font-style: italic;
 }
 
 #bs-example-navbar-collapse-1 > ul.nav.navbar-nav.navbar-right > li:nth-child(3) > a {
@@ -98,7 +113,7 @@ body {
 }
 
 #bs-example-navbar-collapse-1 > ul.nav.navbar-nav.navbar-right > li:nth-child(3) > a:hover {
-	font-size: 110%;
+	font-style: italic;
 }
 
 .searchHeader {
@@ -106,10 +121,12 @@ body {
 	font-size: 2vw;
 }
 
+.searchNavbar {
+	color: white;
+	font-size: 1vw;
+}
+
 .loginSignupBox {
-/*	border-top: 2px solid #422724;
-	border-left: 2px solid #422724;
-	border-right: 2px solid #422724;*/
 	border: 2px solid #422724;
 }
 
@@ -152,14 +169,14 @@ hr {
 
 
 .title {
-	color: #422724;
+	color: white;
 	font-size: 2.5vw;
 	text-align: center;
 }
 
 .summary {
-	color: #422724;
-	font-size: 1.5vw;
+	color: white;
+	font-size: 1vw;
 	text-align: center;
 }
 
@@ -177,37 +194,37 @@ hr {
 body > div:nth-child(5) > a {
 	color: #422724;
 	font-size: 2vw;
-	font-style: italic;
 }
 
 body > div:nth-child(5) > a:hover {
 	color: #422724;
-	font-size: 2.5vw;
+	font-weight: bold;
 	text-decoration: none;
+	font-style: italic;
 }
 
 body > div:nth-child(6) > a {
 	color: #422724;
 	font-size: 2vw;
-	font-style: italic;
 }
 
 body > div:nth-child(6) > a:hover {
 	color: #422724;
-	font-size: 2.5vw;
+	font-weight: bold;
 	text-decoration: none;
+	font-style: italic;
 }
 
 body > div:nth-child(7) > a {
 	color: #422724;
 	font-size: 2vw;
-	font-style: italic;
 }
 
 body > div:nth-child(7) > a:hover {
 	color: #422724;
-	font-size: 2.5vw;
+	font-weight: bold;
 	text-decoration: none;
+	font-style: italic;
 }
 
 .accountOptions {
@@ -249,6 +266,53 @@ textarea {
 	height: 20vw;
 	width: 100%;
 }
+
+.navbar-form {
+    display: flex;
+    align-items: center;
+}
+
+.img {
+	width: 100%;
+	height: 100%;
+}
+
+.listing {
+	background-color: #422724;
+	background-size: cover;
+	background-repeat: no-repeat; 
+	margin-bottom: 5%;
+}
+
+
+#lightbox {
+
+  -moz-background-clip: border;     /* Firefox 3.6 */
+  -webkit-background-clip: border;  /* Safari 4? Chrome 6? */
+  background-clip: border-box;      /* Firefox 4, Safari 5, Opera 10, IE 9 */
+				
+  -moz-background-clip: padding;     /* Firefox 3.6 */
+  -webkit-background-clip: padding;  /* Safari 4? Chrome 6? */
+  background-clip: padding-box;      /* Firefox 4, Safari 5, Opera 10, IE 9 */
+				
+  -moz-background-clip: content;     /* Firefox 3.6 */
+  -webkit-background-clip: content;  /* Safari 4? Chrome 6? */
+  background-clip: content-box;      /* Firefox 4, Safari 5, Opera 10, IE 9 */
+				
+}
+
+.loginSignupQuestion {
+	font-size: 1.5vw;
+	color: #422724;
+	text-align: center;
+	padding-top: 5%;
+}
+
+.characterLimit {
+	font-size: 1vw;
+	color: #422724;
+}
+
 
 
 

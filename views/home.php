@@ -1,7 +1,7 @@
 <div class="col-xs-12 homepageHeader">
     <div class="col-xs-12 invisible jjcAdlister">lorem</div>
     <div class="col-xs-12 jjcAdlister">
-        JJC Adlister
+        Ad-Up
     </div>
     <div class="col-xs-12 invisible jjcAdlister">lorem</div>
     <div class="col-xs-12 searchHeader">

@@ -1,6 +1,7 @@
 <div class="col-xs-12 invisible invisibleFour">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At sequi repellat reprehenderit suscipit, aliquam et obcaecati.</div>
 
-<div class="col-xs-offset-2 col-xs-8 col-sm-offset-1 col-sm-4 loginSignupBox">
+<div class="col-xs-offset-2 col-xs-8 col-sm-offset-1 col-sm-4 loginSignupBox loginFade">
+    <div class="col-xs-12 loginSignupQuestion">Already have an account?</div>
     <div class="col-xs-12 loginSignupHeader">Login</div>
     <hr>
     <form action="" method="POST">
@@ -25,7 +26,8 @@
 <div class="col-xs-12 visible-xs invisible invisibleFour">lorem</div>
 
 
-<div class="col-xs-offset-2 col-xs-8 col-sm-offset-1 col-sm-5 loginSignupBox">
+<div class="col-xs-offset-2 col-xs-8 col-sm-offset-1 col-sm-5 loginSignupBox signupFade">
+    <div class="col-xs-12 loginSignupQuestion">Don't have an account yet?</div>
     <div class="col-xs-12 loginSignupHeader">Signup</div>
     <hr>
     <form action="" method="POST">

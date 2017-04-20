@@ -13,7 +13,7 @@
 	<a href="/create">Delete a Listing</a>
 </div>
 <div class="col-xs-4 accountOptions">
-	<a href="/">Search Listings</a>
+	<a href="/">Favorite Listings</a>
 </div>
 
 <div class="col-xs-12 invisible invisibleThree">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At sequi repellat reprehenderit suscipit, aliquam et obcaecati.</div>

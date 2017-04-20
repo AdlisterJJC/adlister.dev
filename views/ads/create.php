@@ -11,8 +11,17 @@
 
 <div class="col-xs-offset-2 col-xs-8 createBody">
 	<form action="" method="POST">
+		<div class="col-xs-12 invisible invisibleTwo">filler text</div>
+        <div class="col-xs-12 createHeaders">Contact Email</div>
+        	<div class="col-xs-12">
+                <input type="text" name="contactEmail" id="contactEmail" class="loginSignupInput">
+            </div>
+        <div class="col-xs-12 invisible invisibleTwo">filler text</div>
 		<div class="col-xs-12 invisible">filler text</div>
-		<div class="col-xs-7 createHeaders">Title</div>
+		<div class="col-xs-7 createHeaders">
+			Title
+			<div class="characterLimit">(max 25 characters)</div>
+		</div>
         <div class="col-xs-offset-1 col-xs-3 createHeaders">Price</div>
             <div class="col-xs-7">
                 <input type="text" name="createTitle" id="createTitle" class="loginSignupInput">

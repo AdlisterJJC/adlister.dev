@@ -17,7 +17,21 @@
                     <a href="#page-top"></a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="/">Search</a>
+                    <a class="page-scroll" href="/">Ad-Up: Home</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-left">
+                <li>
+                    <div class="hidden-xs col-xs-12 searchNavbar">
+                        <form action="" method="GET" class="navbar-form">
+                            <div class="col-xs-offset-2 col-xs-6">
+                                <input type="text" name="search" id="search" class="searchBarNavbar"">
+                            </div>
+                            <div class="col-xs-offset-1 col-xs-1">
+                                <button type="submit" class="searchSubmitNavbar">Search</button>
+                            </div>
+                        </form>
+                    </div>
                 </li>
             </ul>
              <ul class="nav navbar-nav navbar-right">
