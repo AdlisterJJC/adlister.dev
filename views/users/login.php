@@ -14,6 +14,9 @@
             <div class="col-xs-12">
                 <input type="password" name="loginPassword" id="loginPassword" class="loginSignupInput">
             </div>
+        <div class="col-xs-12 loginSignupQuestion">
+            <?php echo $message; ?>
+        </div>
         <div class="col-xs-12 invisible invisibleThree">filler text</div>
         <div class="col-xs-12">
             <button type="submit" class="loginSignupButton">Login</button>
