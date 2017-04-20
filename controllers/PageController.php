@@ -32,18 +32,19 @@ function pageController()
 			if(Auth::check()){
 				header("Location: /users/account");
 			}
-			if(!empty($_POST)) {
+			if(!empty($_POST['loginUsername']) && !empty($_POST['loginPassword']) && empty($_POST['signupUsername']) && empty($_POST['signupName']) && empty($_POST['signupEmail']) && empty($_POST['signupPassword'])) {
 				$usernameOrEmail = Input::get('loginUsername');
 				$password = Input::get('loginPassword');
 				Auth::attempt($usernameOrEmail, $password);
 				header("Location: /users/account");
-			} else {
+			} elseif (!empty($_POST['signupUsername']) && !empty($_POST['signupName']) && !empty($_POST['signupEmail']) && !empty($_POST['signupPassword']) && $_POST['signupPassword'] === $_POST['confirmPassword'] && empty($_POST['loginUsername']) && empty($_POST['loginPassword'])) {
+				Users::insertUser(); 
+			} elseif (!Auth::attempt($usernameOrEmail, $password)) {
 				$data['message'] = "Please enter username or password.";
+
 			}
-			break;
-		case '/signup':
-			$mainView = '../views/users/signup.php';
-			break;
+			break;				
+
 		case '/create':
 			$mainView = '../views/ads/create.php';
 			break;
