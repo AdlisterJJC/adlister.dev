@@ -42,6 +42,10 @@
                 <input type="text" name="createCategories" id="createCategories" class="loginSignupInput">
             </div>
         <div class="col-xs-12 invisible invisibleTwo">filler text</div>
+        <div class="col-xs-12">
+            <button type="submit" class="loginSignupButton">Create Listing</button>
+        </div>
+        <div class="col-xs-12 invisible invisibleTwo">filler text</div>
 	</form>
 </div>
 

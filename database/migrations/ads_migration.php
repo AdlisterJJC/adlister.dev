@@ -12,7 +12,7 @@ $dbc->exec($query);
 $ads = 'CREATE TABLE IF NOT EXISTS ads (
 	id INT UNSIGNED NOT NULL AUTO_INCREMENT,
 	date_posted DATE NOT NULL,
-    user_id INT UNSIGNED UNIQUE KEY NOT NULL,
+    user_id INT UNSIGNED NOT NULL,
     categories VARCHAR(200) NOT NULL,
     price DOUBLE(24,2) NOT NULL, 
     email VARCHAR(240) NOT NULL,
