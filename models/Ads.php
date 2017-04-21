@@ -89,20 +89,19 @@ class Ads extends Model {
 
 		self::dbConnect();
 
-		$statement = self::$dbc->prepare('INSERT INTO ads (date_posted, user_id, categories, price, email, item, summary, description) VALUES (:date_posted, :user_id, :categories, :price, :email, :item, :summary, :description)');
+		$statement = self::$dbc->prepare('INSERT INTO ads (date_posted, user_id, categories, price, email, item, summary, description) VALUES (:date_posted, :user_id, :createCategories, :createPrice, :contactEmail, :createTitle, :createSummary, :createDescription)');
 
 		$statement->bindValue(':date_posted', date("Y-m-d"), PDO::PARAM_STR);
-		$statement->bindValue(':user_id', $this->user_id, PDO::PARAM_INT);		
-		$statement->bindValue(':categories', $this->categories, PDO::PARAM_STR);
-		$statement->bindValue(':price', $this->price, PDO::PARAM_INT);
-		$statement->bindValue(':email', $this->email, PDO::PARAM_STR);
-		$statement->bindValue(':item', $this->item, PDO::PARAM_STR);
-		$statement->bindValue(':summary', $this->summary, PDO::PARAM_STR);
-		$statement->bindValue(':description', $this->description, PDO::PARAM_STR);	
+		$statement->bindValue(':user_id', $_SESSION['LOGGED_IN_ID'], PDO::PARAM_INT);		
+		$statement->bindValue(':createCategories', $_POST['createCategories'], PDO::PARAM_STR);
+		$statement->bindValue(':createPrice', $_POST['createPrice'], PDO::PARAM_INT);
+		$statement->bindValue(':contactEmail', $_POST['contactEmail'], PDO::PARAM_STR);
+		$statement->bindValue(':createTitle', $_POST['createTitle'], PDO::PARAM_STR);
+		$statement->bindValue(':createSummary', $_POST['createSummary'], PDO::PARAM_STR);
+		$statement->bindValue(':createDescription', $_POST['createDescription'], PDO::PARAM_STR);	
 
 		$statement->execute();
-
-		$this->id = self::$dbc->lastInsertId();	
+	
 	}
 
 }
