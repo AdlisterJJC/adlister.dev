@@ -96,6 +96,38 @@ class Ads extends Model {
 
 	}
 
+	public static function findAdsbyAccount($id) {
+
+		self::dbConnect();
+
+		$ads = self::$dbc->query('SELECT * FROM ' . self::$table . ' WHERE user_id = ' . $id);
+
+		$adsArray = [];
+
+		foreach ($ads as $ad) {
+
+			$singleAd = new Ads();
+
+			$singleAd->id = $ad['id'];
+			$singleAd->date_posted = $ad['date_posted'];
+			$singleAd->user_id = $ad['user_id'];
+			$singleAd->categories = $ad['categories'];
+			$singleAd->price = $ad['price'];
+			$singleAd->email = $ad['email'];
+			$singleAd->item = $ad['item'];
+			$singleAd->summary = $ad['summary'];
+			$singleAd->description = $ad['description'];
+
+			array_push($adsArray, $singleAd);
+			
+		}
+
+		// TODO: return an array of Park objects
+		return $adsArray;
+
+
+	}
+
 
 	public static function insertAd() {
 

@@ -50,7 +50,7 @@ $i=0;
                         <div class="col-lg-8 col-lg-offset-2">
                             <div class="modal-body">
                                 <h1>' . $listing->item . '</h1>
-                                <a href="https://caydensimler.github.io/simple-simon.html" target="_blanK"><img class="img-responsive img-centered" src="img/sample.png" alt=""></a>
+                                <img class="img-responsive img-centered" src="img/sample.png" alt="">
                                 <h4>' . $listing->description . '</h4>
                                 <h2>$' . $listing->price . '</h2>
                                 <h4>' . $listing->email . '</h4>
