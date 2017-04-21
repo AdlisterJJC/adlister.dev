@@ -43,7 +43,7 @@ class Ads extends Model {
 
 		foreach ($ads as $ad) {
 
-			$singleAd = new Park();
+			$singleAd = new Ads();
 
 			$singleAd->id = $ad['id'];
 			$singleAd->date_posted = $ad['date_posted'];
@@ -85,5 +85,26 @@ class Ads extends Model {
 		return $instance;
 	}
 
+	public function insertAd() {
+
+		self::dbConnect();
+
+		$statement = self::$dbc->prepare('INSERT INTO ads (date_posted, user_id, categories, price, email, item, summary, description) VALUES (:date_posted, :user_id, :categories, :price, :email, :item, :summary, :description)');
+
+		$statement->bindValue(':date_posted', date("Y-m-d"), PDO::PARAM_STR);
+		$statement->bindValue(':user_id', $this->user_id, PDO::PARAM_INT);		
+		$statement->bindValue(':categories', $this->categories, PDO::PARAM_STR);
+		$statement->bindValue(':price', $this->price, PDO::PARAM_INT);
+		$statement->bindValue(':email', $this->email, PDO::PARAM_STR);
+		$statement->bindValue(':item', $this->item, PDO::PARAM_STR);
+		$statement->bindValue(':summary', $this->summary, PDO::PARAM_STR);
+		$statement->bindValue(':description', $this->description, PDO::PARAM_STR);	
+
+		$statement->execute();
+
+		$this->id = self::$dbc->lastInsertId();	
+	}
+
 }
+
 ?>

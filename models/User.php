@@ -9,7 +9,7 @@ class User extends Model {
     // given key is not a password, just call the parent method
     public function __set($name, $value)
     {
-        if ($name == 'password') {
+        if ($name == 'signupPassword') {
             $value = password_hash($value, PASSWORD_DEFAULT);
         }
         parent::__set($name, $value);
@@ -41,5 +41,33 @@ class User extends Model {
         }
 
         return $instance;
+    }
+
+        public static function insertUser() {
+        // TODO: call dbConnect to ensure we have a database connection
+        self::dbConnect();
+
+        // TODO: use the $connection static property to create a perpared statement for
+        //       inserting a record into the parks table
+            // TODO: use the $this keyword to bind the values from this object to
+        //       the prepared statement
+
+        $statement = self::$dbc->prepare('INSERT INTO users (name, email, username, password) VALUES (:signupName, :signupEmail, :signupUsername, :signupPassword)');
+
+        $statement->bindValue(':signupName', $_POST['signupName'], PDO::PARAM_STR);
+
+        $statement->bindValue(':signupEmail', $_POST['signupEmail'], PDO::PARAM_STR);
+
+        $statement->bindValue(':signupUsername', $_POST['signupUsername'], PDO::PARAM_STR);
+
+        $statement->bindValue(':signupPassword', password_hash($_POST['signupPassword'], PASSWORD_DEFAULT), PDO::PARAM_STR);
+
+        $statement->execute();
+        
+        // TODO: execute the statement and set the $id property of this object to
+        //       the newly created id
+
+        // $this->id = self::$dbc->lastInsertId();
+        
     }
 }
