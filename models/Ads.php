@@ -148,11 +148,13 @@ class Ads extends Model {
 	
 	}
 
-	public static function deleteAd() {
+	public static function deleteAd($input) {
 
 		self::dbConnect();
 
-		$query = 'DELETE FROM ' . self::$table . ' WHERE id = ' . $_REQUEST['id'];
+		$query = 'DELETE FROM ' . self::$table . ' WHERE id = ' . $input;
+
+		$query->execute();
 
 	}
 
