@@ -41,6 +41,27 @@ class User extends Model {
         }
 
         return $instance;
+    }    
+
+    public static function findByPassword($password)
+    {
+        self::dbConnect();
+
+        $query = 'SELECT * FROM ' . self::$table . ' WHERE password = :password';
+
+        $stmt = self::$dbc->prepare($query);
+        $stmt->bindValue(':password', $password, PDO::PARAM_STR);
+        $stmt->execute();
+
+        $results = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        $instance = null;
+        if ($results) {
+            $instance = new static;
+            $instance->attributes = $results;
+        }
+
+        return $instance;
     }
 
         public static function insertUser() {
