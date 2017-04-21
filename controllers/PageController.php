@@ -45,6 +45,9 @@ function pageController()
 				// var_dump($_POST);
 				$_SESSION['IS_LOGGED_IN'] = $_POST['signupUsername'];
 				User::insertUser();
+				$usernameOrEmail = $_POST['signupUsername'];
+				$password = $_POST['signupPassword'];
+				Auth::attempt($usernameOrEmail, $password);
 				header("Location: /users/account");
 			} 
 			// } elseif (!Auth::attempt($usernameOrEmail, $password)) {
