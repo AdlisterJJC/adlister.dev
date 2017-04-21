@@ -30,6 +30,6 @@ class Input
 
     public static function sanitize($input) 
     {
-        htmlspecialchars(strip_tags($input));
+        return htmlspecialchars(strip_tags($input));
     }
 }

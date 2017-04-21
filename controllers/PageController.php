@@ -31,6 +31,10 @@ function pageController()
 			} else {
 				$mainView = '../views/home.php';
 			}
+			if (!empty($_POST['deleteListing'])) {
+				Ads::deleteAd($_POST['deleteListing']);
+				header("Location: /users/account");
+			}
 			break;
 		case '/results':
 			$mainView = '../views/ads/index.php';
@@ -41,9 +45,6 @@ function pageController()
 			}
 			$mainView = '../views/users/login.php';
 			$data['message'] = '';
-			if(Auth::check()){
-				header("Location: /users/account");
-			}
 			if(!empty($_POST['loginUsername']) && !empty($_POST['loginPassword']) && empty($_POST['signupUsername']) && empty($_POST['signupName']) && empty($_POST['signupEmail']) && empty($_POST['signupPassword'])) {
 				$usernameOrEmail = Input::get('loginUsername');
 				$password = Input::get('loginPassword');

@@ -6,6 +6,8 @@
 <div class="col-xs-offset-1 col-xs-10 accountWelcome">Welcome to your account page, <?= $_SESSION['IS_LOGGED_IN']; ?>.</div>
 <div class="col-xs-12 invisible invisibleThree">lorem</div>
 
+
+
 <div class="col-xs-12 invisible invisibleThree">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At sequi repellat reprehenderit suscipit, aliquam et obcaecati.</div>
 
 
@@ -53,7 +55,7 @@
                                 <h2>$' . $listing->price . '</h2>
                                 <h4>' . $listing->email . '</h4>
                                 <div class="col-xs-6">
-                                <h2><form action="" method="POST"><button type="submit" class="deleteButton" name="deleteListing"><i class="fa fa-trash" aria-hidden="true"></i></button</form></h2>
+                                <h2><form action="" method="POST"><button type="submit" class="deleteButton" name="deleteListing" value="' . $listing->id . '" ><i class="fa fa-trash" aria-hidden="true"></i></button</form></h2>
                                	</div>
 
                                 <div class="col-xs-6">
