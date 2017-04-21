@@ -137,15 +137,23 @@ class Ads extends Model {
 
 		$statement->bindValue(':date_posted', date("Y-m-d"), PDO::PARAM_STR);
 		$statement->bindValue(':user_id', $_SESSION['LOGGED_IN_ID'], PDO::PARAM_INT);		
-		$statement->bindValue(':createCategories', $_POST['createCategories'], PDO::PARAM_STR);
-		$statement->bindValue(':createPrice', $_POST['createPrice'], PDO::PARAM_INT);
-		$statement->bindValue(':contactEmail', $_POST['contactEmail'], PDO::PARAM_STR);
-		$statement->bindValue(':createTitle', $_POST['createTitle'], PDO::PARAM_STR);
-		$statement->bindValue(':createSummary', $_POST['createSummary'], PDO::PARAM_STR);
-		$statement->bindValue(':createDescription', $_POST['createDescription'], PDO::PARAM_STR);	
+		$statement->bindValue(':createCategories', Input::sanitize($_POST['createCategories']), PDO::PARAM_STR);
+		$statement->bindValue(':createPrice', Input::sanitize($_POST['createPrice']), PDO::PARAM_INT);
+		$statement->bindValue(':contactEmail', Input::sanitize($_POST['contactEmail']), PDO::PARAM_STR);
+		$statement->bindValue(':createTitle', Input::sanitize($_POST['createTitle']), PDO::PARAM_STR);
+		$statement->bindValue(':createSummary', Input::sanitize($_POST['createSummary']), PDO::PARAM_STR);
+		$statement->bindValue(':createDescription', Input::sanitize($_POST['createDescription']), PDO::PARAM_STR);	
 
 		$statement->execute();
 	
+	}
+
+	public static function deleteAd() {
+
+		self::dbConnect();
+
+		$query = 'DELETE FROM ' . self::$table . ' WHERE id = ' . $_REQUEST['id'];
+
 	}
 
 }
