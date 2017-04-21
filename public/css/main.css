@@ -116,6 +116,14 @@ body {
 	font-style: italic;
 }
 
+#bs-example-navbar-collapse-1 > ul.nav.navbar-nav.navbar-right > li:nth-child(4) > a {
+	color: white;
+}
+
+#bs-example-navbar-collapse-1 > ul.nav.navbar-nav.navbar-right > li:nth-child(4) > a:hover {
+	font-style: italic;
+}
+
 .searchHeader {
 	color: white;
 	font-size: 2vw;
@@ -333,6 +341,18 @@ textarea {
 }
 
 
+#portfolio-modal > div > div > div.container > div > div > div > button {
+	background-color: #422724;
+}
+
+.background {
+	background-image: url('/img/lightgray.jpg');
+	color: #422724;
+}
+
+h1 {
+	font-size: 5vw;
+}
 
 
 
