@@ -27,4 +27,9 @@ class Input
     {
         return $_REQUEST;
     }
+
+    public static function sanitize($input) 
+    {
+        htmlspecialchars(strip_tags($input));
+    }
 }
