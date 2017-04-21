@@ -4,7 +4,6 @@
 <div class="col-xs-12 invisible invisibleFour">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At sequi repellat reprehenderit suscipit, aliquam et obcaecati.</div>
 
 <div class="col-xs-offset-1 col-xs-10 accountWelcome">Welcome to your account page, <?= $_SESSION['IS_LOGGED_IN']; ?>.</div>
-<?= $_SESSION['LOGGED_IN_ID']; ?>
 <div class="col-xs-12 invisible invisibleThree">lorem</div>
 
 <div class="col-xs-4 accountOptions">

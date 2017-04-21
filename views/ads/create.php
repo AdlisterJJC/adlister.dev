@@ -5,7 +5,6 @@
 
 <div class="col-xs-12 createTitle">
 	Create a Listing
-	<?= $_SESSION['LOGGED_IN_ID']; ?>
 </div>
 
 <div class="col-xs-12 invisible">filler text</div>
