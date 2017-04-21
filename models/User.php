@@ -54,11 +54,11 @@ class User extends Model {
 
         $statement = self::$dbc->prepare('INSERT INTO users (name, email, username, password) VALUES (:signupName, :signupEmail, :signupUsername, :signupPassword)');
 
-        $statement->bindValue(':signupName', $_POST['signupName'], PDO::PARAM_STR);
+        $statement->bindValue(':signupName', Input::sanitize($_POST['signupName']), PDO::PARAM_STR);
 
-        $statement->bindValue(':signupEmail', $_POST['signupEmail'], PDO::PARAM_STR);
+        $statement->bindValue(':signupEmail', Input::sanitize($_POST['signupEmail']), PDO::PARAM_STR);
 
-        $statement->bindValue(':signupUsername', $_POST['signupUsername'], PDO::PARAM_STR);
+        $statement->bindValue(':signupUsername', Input::sanitize($_POST['signupUsername']), PDO::PARAM_STR);
 
         $statement->bindValue(':signupPassword', password_hash($_POST['signupPassword'], PASSWORD_DEFAULT), PDO::PARAM_STR);
 

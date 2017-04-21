@@ -57,7 +57,7 @@ function pageController()
 				$password = $_POST['signupPassword'];
 				Auth::attempt($usernameOrEmail, $password);
 				header("Location: /users/account");
-			} 
+			}
 			// } elseif (!Auth::attempt($usernameOrEmail, $password)) {
 			// 	$data['message'] = "Please enter username or password.";
 			// }

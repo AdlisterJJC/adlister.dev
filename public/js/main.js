@@ -23,6 +23,22 @@ $("document").ready(function(){
 		}, 500);
 	});
 
+	$(".deleteButton").hover(
+		function() {
+	    	$(this).css("font-size", "2em");
+	}, function() {
+	    	$(this).css("font-size", "1em");
+	  	}
+	);
+
+	$(".editButton").hover(
+		function() {
+	    	$(this).css("font-size", "2em");
+	}, function() {
+	    	$(this).css("font-size", "1em");
+	  	}
+	);
+
 
 
 	// var maxHeight = 0;
