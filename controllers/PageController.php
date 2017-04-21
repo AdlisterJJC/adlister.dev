@@ -20,6 +20,7 @@ function pageController()
 			$mainView = '../views/users/edit.php';
 			break;
 		case '/users/account':
+		var_dump($_SESSION);
 			if (isset($_SESSION['IS_LOGGED_IN'])) {
 				$mainView = '../views/users/account.php';
 			} else {
@@ -45,8 +46,9 @@ function pageController()
 				// var_dump($_POST);
 				$_SESSION['IS_LOGGED_IN'] = $_POST['signupUsername'];
 				User::insertUser();
+				
 				header("Location: /users/account");
-			} 
+			}
 			// } elseif (!Auth::attempt($usernameOrEmail, $password)) {
 			// 	$data['message'] = "Please enter username or password.";
 			// }
