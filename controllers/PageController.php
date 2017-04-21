@@ -45,9 +45,6 @@ function pageController()
 			}
 			$mainView = '../views/users/login.php';
 			$data['message'] = '';
-			if(Auth::check()){
-				header("Location: /users/account");
-			}
 			if(!empty($_POST['loginUsername']) && !empty($_POST['loginPassword']) && empty($_POST['signupUsername']) && empty($_POST['signupName']) && empty($_POST['signupEmail']) && empty($_POST['signupPassword'])) {
 				$usernameOrEmail = Input::get('loginUsername');
 				$password = Input::get('loginPassword');
