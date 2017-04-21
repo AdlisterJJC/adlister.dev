@@ -77,8 +77,6 @@ $i=0;
                                 <h2>$' . $listing->price . '</h2>
                                 <h4>' . $listing->email . '</h4>
                                 <div class="col-xs-12 invisible invisibleThree">filler text</div>
-
-                                <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Return to Results</button>
                             </div>
                         </div>
                     </div>
