@@ -154,8 +154,9 @@ class Ads extends Model {
 
 		$query = 'DELETE FROM ' . self::$table . ' WHERE id = ' . $input;
 
-		$query->execute();
+		$stmt = self::$dbc->prepare($query);
 
+		$stmt->execute();
 	}
 
 }
