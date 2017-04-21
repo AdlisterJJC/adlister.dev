@@ -68,24 +68,36 @@ class Ads extends Model {
 
 		self::dbConnect();
 
-		$query = 'SELECT * FROM' . self::$table . ' WHERE category LIKE %:category%';
+		$ads = self::$dbc->query('SELECT * FROM ' . self::$table . ' WHERE categories LIKE \'%' . $category . '%\' OR item LIKE \'%' . $category . '%\' OR summary LIKE \'%' . $category . '%\' OR description LIKE \'%' . $category . '%\'');
 
-		$stmt = self::$dbc->prepare($query);
-		$stmt->bindValue(':category', $category, PDO::PARAM_STR);
-		$stmt->execute();
+		$adsArray = [];
 
-		$results = $stmt->fetch(PDO::FETCH_ASSOC);
+		foreach ($ads as $ad) {
 
-		$instance = null;
-		if($results) {
-			$instance = new static;
-			$instance->attributes = $results;
+			$singleAd = new Ads();
+
+			$singleAd->id = $ad['id'];
+			$singleAd->date_posted = $ad['date_posted'];
+			$singleAd->user_id = $ad['user_id'];
+			$singleAd->categories = $ad['categories'];
+			$singleAd->price = $ad['price'];
+			$singleAd->email = $ad['email'];
+			$singleAd->item = $ad['item'];
+			$singleAd->summary = $ad['summary'];
+			$singleAd->description = $ad['description'];
+
+			array_push($adsArray, $singleAd);
+			
 		}
 
-		return $instance;
+		// TODO: return an array of Park objects
+		return $adsArray;
+
+
 	}
 
-	public function insertAd() {
+
+	public static function insertAd() {
 
 		self::dbConnect();
 

@@ -14,12 +14,18 @@ function pageController()
 	switch ($request) {
 		// TODO: put routes here
 		case '/':
+			if (!empty($_GET['search'])) {
+				header("Location: /results?search=". $_GET['search']);
+			}
 			$mainView = '../views/home.php';
 			break;
 		case '/users/edit':
 			$mainView = '../views/users/edit.php';
 			break;
 		case '/users/account':
+			if (!empty($_GET['search'])) {
+				header("Location: /results?search=". $_GET['search']);
+			}
 			if (isset($_SESSION['IS_LOGGED_IN'])) {
 				$mainView = '../views/users/account.php';
 			} else {
@@ -30,6 +36,9 @@ function pageController()
 			$mainView = '../views/ads/index.php';
 			break;
 		case '/login':
+			if (!empty($_GET['search'])) {
+				header("Location: /results?search=". $_GET['search']);
+			}
 			$mainView = '../views/users/login.php';
 			$data['message'] = '';
 			if(Auth::check()){
@@ -42,7 +51,6 @@ function pageController()
 				$_SESSION['IS_LOGGED_IN'] = $usernameOrEmail;
 				header("Location: /users/account");
 			} elseif (!empty($_POST['signupUsername']) && !empty($_POST['signupName']) && !empty($_POST['signupEmail']) && !empty($_POST['signupPassword']) && $_POST['signupPassword'] === $_POST['confirmPassword'] && empty($_POST['loginUsername']) && empty($_POST['loginPassword'])) {
-				// var_dump($_POST);
 				$_SESSION['IS_LOGGED_IN'] = $_POST['signupUsername'];
 				User::insertUser();
 				$usernameOrEmail = $_POST['signupUsername'];
@@ -55,14 +63,21 @@ function pageController()
 			// }
 			break;				
 		case '/create':
+			if (!empty($_GET['search'])) {
+				header("Location: /results?search=". $_GET['search']);
+			}
 			$mainView = '../views/ads/create.php';
+			if (!empty($_POST['createCategories']) && !empty($_POST['createTitle']) && !empty($_POST['createPrice']) && !empty($_POST['createDescription']) && !empty($_POST['createSummary']) && !empty($_POST['contactEmail'])) {
+				Ads::insertAd();
+				header("Location: /users/account");
+			}
 			break;
 		case '/edit':
 			$mainView = '../views/ads/edit.php';
 			break;
 		case '/logout':
 			Auth::logout();
-			$mainView = '../views/home.php';
+			header("Location: /");
 			break;
 		default:    // displays 404 if route not specified above
 			$mainView = '../views/404.php';

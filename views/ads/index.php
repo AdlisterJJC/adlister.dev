@@ -2,8 +2,7 @@
 <?php 
 
 
-	
-$ads = Ads::all();
+$ads = Ads::findAdsbyCategory($_GET['search']);	
 $i=0;
 
 ?>
