@@ -31,6 +31,10 @@ function pageController()
 			} else {
 				$mainView = '../views/home.php';
 			}
+			if (!empty($_POST['deleteListing'])) {
+				Ads::deleteAd($_POST['deleteListing']);
+				header("Location: /users/account");
+			}
 			break;
 		case '/results':
 			$mainView = '../views/ads/index.php';
