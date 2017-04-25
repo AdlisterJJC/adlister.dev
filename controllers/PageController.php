@@ -52,7 +52,8 @@ function pageController()
 				empty($_POST['signupName']) 	&& 
 				empty($_POST['signupEmail']) 	&& 
 				empty($_POST['signupPassword']) &&
-				!empty(User::findByUsernameOrEmail($_POST['loginUsername']))
+				!empty(User::findByUsernameOrEmail($_POST['loginUsername'])) &&
+				password_verify($_POST['loginPassword'], User::findByUsernameOrEmail($_POST['loginUsername'])->password)
 				) {
 
 				$usernameOrEmail = Input::get('loginUsername');
@@ -61,7 +62,7 @@ function pageController()
 				$_SESSION['IS_LOGGED_IN'] = $usernameOrEmail;
 				var_dump(User::findByUsernameOrEmail($usernameOrEmail));
 
-				header("Location: /users/account");
+				// header("Location: /users/account");
 			} elseif (!empty($_POST['signupUsername']) && !empty($_POST['signupName']) && !empty($_POST['signupEmail']) && !empty($_POST['signupPassword']) && $_POST['signupPassword'] === $_POST['confirmPassword'] && empty($_POST['loginUsername']) && empty($_POST['loginPassword'])) {
 				$_SESSION['IS_LOGGED_IN'] = $_POST['signupUsername'];
 				User::insertUser();
@@ -69,10 +70,14 @@ function pageController()
 				$password = $_POST['signupPassword'];
 				Auth::attempt($usernameOrEmail, $password);
 				header("Location: /users/account");
+			} else if (
+				(!empty($_POST['loginUsername']) || 
+				!empty($_POST['loginPassword'])) &&
+				(empty(User::findByUsernameOrEmail($_POST['loginUsername'])) ||
+				!password_verify($_POST['loginPassword'], User::findByUsernameOrEmail($_POST['loginUsername'])->password))
+				) {
+				$data['message'] = "Invalid username or password.";
 			}
-			// } elseif (!Auth::attempt($usernameOrEmail, $password)) {
-			// 	$data['message'] = "Please enter username or password.";
-			// }
 			break;				
 		case '/create':
 			if (!empty($_GET['search'])) {
