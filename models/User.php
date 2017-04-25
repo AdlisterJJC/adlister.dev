@@ -41,6 +41,27 @@ class User extends Model {
         }
 
         return $instance;
+    }    
+
+    public static function findByPassword($password)
+    {
+        self::dbConnect();
+
+        $query = 'SELECT * FROM ' . self::$table . ' WHERE password = :password';
+
+        $stmt = self::$dbc->prepare($query);
+        $stmt->bindValue(':password', $password, PDO::PARAM_STR);
+        $stmt->execute();
+
+        $results = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        $instance = null;
+        if ($results) {
+            $instance = new static;
+            $instance->attributes = $results;
+        }
+
+        return $instance;
     }
 
         public static function insertUser() {
@@ -54,11 +75,11 @@ class User extends Model {
 
         $statement = self::$dbc->prepare('INSERT INTO users (name, email, username, password) VALUES (:signupName, :signupEmail, :signupUsername, :signupPassword)');
 
-        $statement->bindValue(':signupName', $_POST['signupName'], PDO::PARAM_STR);
+        $statement->bindValue(':signupName', Input::sanitize($_POST['signupName']), PDO::PARAM_STR);
 
-        $statement->bindValue(':signupEmail', $_POST['signupEmail'], PDO::PARAM_STR);
+        $statement->bindValue(':signupEmail', Input::sanitize($_POST['signupEmail']), PDO::PARAM_STR);
 
-        $statement->bindValue(':signupUsername', $_POST['signupUsername'], PDO::PARAM_STR);
+        $statement->bindValue(':signupUsername', Input::sanitize($_POST['signupUsername']), PDO::PARAM_STR);
 
         $statement->bindValue(':signupPassword', password_hash($_POST['signupPassword'], PASSWORD_DEFAULT), PDO::PARAM_STR);
 

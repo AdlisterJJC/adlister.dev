@@ -347,11 +347,28 @@ textarea {
 
 .background {
 	background-image: url('/img/lightgray.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
 	color: #422724;
 }
 
 h1 {
 	font-size: 5vw;
+}
+
+.deleteButton {
+	background-color: transparent;
+	border: 0px solid transparent;
+	outline: none;
+	text-align: center;
+}
+
+
+.editButton {
+	background-color: transparent;
+	border: 0px solid transparent;
+	outline: none;
+	text-align: center;
 }
 
 

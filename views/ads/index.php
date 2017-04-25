@@ -2,8 +2,7 @@
 <?php 
 
 
-	
-$ads = Ads::all();
+$ads = Ads::findAdsbyCategory($_GET['search']);	
 $i=0;
 
 ?>
@@ -18,9 +17,6 @@ $i=0;
 	<?= '<div class="col-xs-12 col-sm-6 col-md-4 portfolio-item" id="lightbox">
             <a href="#portfolioModal' . $i . '" class="portfolio-link" data-toggle="modal">
                 <div class="portfolio-hover">
-                    <div class="portfolio-hover-content">
-                        <i class="fa fa-plus fa-3x"></i>
-                    </div>
                 </div>
                 <img src="img/book_header.jpg" class="img-responsive img" alt="">
             </a>
@@ -51,13 +47,12 @@ $i=0;
                         <div class="col-lg-8 col-lg-offset-2">
                             <div class="modal-body">
                                 <h1>' . $listing->item . '</h1>
-                                <a href="https://caydensimler.github.io/simple-simon.html" target="_blanK"><img class="img-responsive img-centered" src="img/sample.png" alt=""></a>
+                                <img class="img-responsive img-centered" src="img/sample.png" alt="">
                                 <h4>' . $listing->description . '</h4>
                                 <h2>$' . $listing->price . '</h2>
                                 <h4>' . $listing->email . '</h4>
                                 <div class="col-xs-12 invisible invisibleThree">filler text</div>
 
-                                <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Return to Results</button>
                             </div>
                         </div>
                     </div>
