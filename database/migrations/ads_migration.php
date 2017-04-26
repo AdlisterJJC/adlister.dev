@@ -1,6 +1,6 @@
 <?php
 
-$_ENV = include __DIR__ . '/../../.env.php';
+$_ENV = require '../../.env.php';
 include_once 'user_migration.php';
 
 // drop table
